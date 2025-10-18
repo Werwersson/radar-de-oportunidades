@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas Disponíveis - Oportunidades Itabuna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-[#0d141c]" style="font-family: 'Work Sans', 'Noto Sans', sans-serif;">
+    <div class="relative flex flex-col min-h-screen overflow-x-hidden">
+
+        <header class="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf4] px-4 md:px-10 py-3">
+    
+            <div class="flex items-center gap-4 md:gap-8">
+                <a href="index.html" class="flex items-center gap-3 md:gap-4 text-[#0d141c]">
+                    <div class="size-4">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path></svg>
+                    </div>
+                    <h2 class="text-base md:text-lg font-bold">Oportunidades Itabuna</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-9">
+                    <a class="text-sm font-medium" href="vagas.html">Vagas</a>
+                    <a class="text-sm font-medium" href="cursos.html">Cursos</a>
+                    <a class="text-sm font-medium" href="dicas.html">Dicas</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#0d80f2] text-slate-50 text-sm font-bold"><span class="truncate">Cadastre-se</span></button>
+                <button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold"><span class="truncate">Entrar</span></button>
+                
+                <button id="menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,88H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden absolute top-16 right-4 w-48 bg-white rounded-lg shadow-lg border border-slate-200 z-50">
+                <nav class="flex flex-col p-2">
+                    <a class="p-2 rounded-md text-sm font-medium hover:bg-slate-100" href="vagas.html">Vagas</a>
+                    <a class="p-2 rounded-md text-sm font-medium hover:bg-slate-100" href="cursos.html">Cursos</a>
+                    <a class="p-2 rounded-md text-sm font-medium hover:bg-slate-100" href="dicas.html">Dicas</a>
+                    <a class="p-2 rounded-md text-sm font-medium hover:bg-slate-100" href="contato.html">Contato</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="px-4 md:px-10 lg:px-40 flex-1 justify-center py-5">
+            <div class="flex flex-col max-w-[960px] mx-auto">
+                <h1 class="text-2xl md:text-3xl font-bold p-4">Vagas Disponíveis em Itabuna</h1>
+                
+                <div class="px-4 py-3">
+                    <div class="flex w-full max-w-lg mx-auto">
+                        <input id="vagas-search-input" placeholder="Pesquisar por cargo ou empresa..." class="form-input flex w-full min-w-0 flex-1 rounded-lg text-[#0d141c] focus:outline-0 h-12 p-4 text-base border border-slate-300">
+                    </div>
+                </div>
+
+                <div class="px-4 py-3">
+                    <div class="overflow-x-auto rounded-lg border border-[#e7edf4] bg-white">
+                        <table class="w-full min-w-[600px]">
+                            <thead class="bg-slate-100">
+                                <tr>
+                                    <th class="px-4 py-3 text-left text-sm font-medium">Cargo</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium">Empresa</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium">Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vagas-table-body">
+                                
+                                <tr class="border-t border-t-[#e7edf4] hover:bg-slate-50 filterable-row">
+                                    <td class="h-[72px] px-4 py-2 font-semibold">
+                                        <a href="vaga-consultor-servicos-indiana.html" class="text-blue-700 hover:underline">Consultor(a) de Serviços Automotivos</a>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#49739c]">Grupo Indiana</td>
+                                    <td class="h-[72px] px-4 py-2 text-sm"><span class="rounded-full bg-purple-100 text-purple-800 px-3 py-1 text-xs font-medium">Emprego (CLT)</span></td>
+                                </tr>
+
+                                <tr class="border-t border-t-[#e7edf4] hover:bg-slate-50 filterable-row">
+                                    <td class="h-[72px] px-4 py-2 font-semibold">
+                                        <a href="vaga-secretaria-academica-cogna.html" class="text-blue-700 hover:underline">Secretaria Acadêmica</a>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#49739c]">Cogna Educação</td>
+                                    <td class="h-[72px] px-4 py-2 text-sm"><span class="rounded-full bg-purple-100 text-purple-800 px-3 py-1 text-xs font-medium">Emprego (CLT)</span></td>
+                                </tr>
+
+                                <tr class="border-t border-t-[#e7edf4] hover:bg-slate-50 filterable-row">
+                                    <td class="h-[72px] px-4 py-2 font-semibold">
+                                        <a href="vaga-consultor-vendas-localiza.html" class="text-blue-700 hover:underline">Consultor(a) de Vendas</a>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#49739c]">Localiza</td>
+                                    <td class="h-[72px] px-4 py-2 text-sm"><span class="rounded-full bg-purple-100 text-purple-800 px-3 py-1 text-xs font-medium">Emprego (CLT)</span></td>
+                                </tr>
+
+                                <tr class="border-t border-t-[#e7edf4] hover:bg-slate-50 filterable-row">
+                                    <td class="h-[72px] px-4 py-2 font-semibold">
+                                        <a href="vaga-analista-customer-success.html" class="text-blue-700 hover:underline">Analista de Customer Success</a>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#49739c]">Bernhoeft</td>
+                                    <td class="h-[72px] px-4 py-2 text-sm"><span class="rounded-full bg-purple-100 text-purple-800 px-3 py-1 text-xs font-medium">Emprego (CLT)</span></td>
+                                </tr>
+
+                                <tr class="border-t border-t-[#e7edf4] hover:bg-slate-50 filterable-row">
+                                    <td class="h-[72px] px-4 py-2 font-semibold">
+                                        <a href="vaga-aprendiz-administrativo.html" class="text-blue-700 hover:underline">Jovem Aprendiz - Área Administrativa</a>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#49739c]">Grupo Petrópolis</td>
+                                    <td class="h-[72px] px-4 py-2 text-sm"><span class="rounded-full bg-green-100 text-green-800 px-3 py-1 text-xs font-medium">Jovem Aprendiz</span></td>
+                                </tr>
+                                
+                                <tr class="border-t border-t-[#e7edf4] hover:bg-slate-50 filterable-row">
+                                    <td class="h-[72px] px-4 py-2 font-semibold">
+                                        <a href="vaga-estagio-log.html" class="text-blue-700 hover:underline">Estágio em Logística</a>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#49739c]">Grupo Astória</td>
+                                    <td class="h-[72px] px-4 py-2 text-sm"><span class="rounded-full bg-blue-100 text-blue-800 px-3 py-1 text-xs font-medium">Estágio</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="flex justify-center border-t border-solid border-t-[#e7edf4] mt-10">
+            <div class="flex max-w-[960px] flex-1 flex-col px-5 py-10 text-center">
+                <p class="text-[#49739c] text-base font-normal leading-normal">© 2025 Oportunidades Itabuna. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // --- SCRIPT DO MENU HAMBÚRGUER ---
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- SCRIPT DO FILTRO DE BUSCA PARA VAGAS ---
+        const searchInput = document.getElementById('vagas-search-input');
+        const rowsToFilter = document.querySelectorAll('#vagas-table-body .filterable-row');
+
+        searchInput.addEventListener('keyup', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            rowsToFilter.forEach(row => {
+                const rowText = row.textContent.toLowerCase();
+                if (rowText.includes(searchTerm)) {
+                    row.style.display = ''; // Mostra a linha
+                } else {
+                    row.style.display = 'none'; // Esconde a linha
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
