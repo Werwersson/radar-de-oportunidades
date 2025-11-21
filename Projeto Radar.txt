@@ -1,0 +1,44 @@
+"""
+Ponte para o Primeiro Emprego
+Projeto: "Radar de Oportunidades Jovem"
+
+O que é? Um serviço centralizado que capta e divulga vagas de estágio, Jovem Aprendiz e primeiro emprego, além de cursos gratuitos, especificamente para a juventude de Itabuna.
+
+Criam e automatizam os canais de divulgação. Pode ser um canal no Telegram ou uma lista de transmissão no WhatsApp. Podem desenvolver scripts simples (web scraping) para monitorar sites de emprego e capturar vagas relevantes para a região.
+
+ Fazem a curadoria do conteúdo. Entram em contato ativo com empresas locais para conseguir vagas, filtram as oportunidades capturadas pela automação para garantir a qualidade, e escrevem os comunicados de forma clara e objetiva. Fazem parcerias com escolas para divulgar o serviço aos alunos.
+
+ Gerenciam a "marca" do projeto, medem as métricas de sucesso (quantos jovens entraram no grupo, quantos relataram ter conseguido uma entrevista) e planejam a sustentabilidade do Radar.
+
+Impacto: Facilita o acesso da juventude à informação qualificada, diminuindo a desigualdade no acesso a oportunidades e servindo como uma ponte crucial entre os jovens e o mercado de trabalho.
+"""
+
+import pyautogui as pa
+import time
+from datetime import date, timedelta
+import pyperclip
+import os
+
+#"http://127.0.0.1:5500/Oportunidades/index.html"
+
+time.sleep(5)
+Quantidade = 10
+pa.press('win')
+time.sleep(1)
+pa.write('edge')
+
+while Quantidade > 0:
+    Quantidade -= 1
+    time.sleep(1)
+    pa.press('enter')
+    time.sleep(5)
+    pa.hotkey('ctrl', 'shift' ,'n')
+    pa.write('http://127.0.0.1:5500/Oportunidades/index.html')
+    time.sleep(5)
+    pa.press('enter')
+    time.sleep(5)
+    pa.click(x=324, y=102)
+    time.sleep(5)
+    pa.click(x=221, y=110)
+    time.sleep(5)
+    pa.hotkey('alt', 'f4')
