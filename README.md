@@ -1,1 +1,0 @@
-# radar-de-oportunidades-atualiza
