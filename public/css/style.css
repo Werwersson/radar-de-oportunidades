@@ -1,0 +1,56 @@
+/*
+ * Arquivo: /public/css/style.css
+ * Estilos personalizados para o projeto "Oportunidades Itabuna".
+*/
+
+/* ==========================================================================
+   1. Definições Globais e de Fontes
+   ========================================================================== */
+body {
+    font-family: 'Work Sans', 'Noto Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   2. Classes de Componentes Personalizados (Botão)
+   ========================================================================== */
+.btn-azul {
+    background-color: #0d80f2;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+.btn-azul:hover {
+    background-color: #0a69c4;
+}
+.btn-azul:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   3. Estilos do Modal de Dúvidas
+   ========================================================================== */
+
+/*
+  A CLASSE MAIS IMPORTANTE:
+  Esta classe esconde o modal por padrão. Se ela não for carregada, o modal
+  sempre aparecerá aberto.
+*/
+.modal-hidden {
+    display: none;
+}
+
+/* Animação de entrada para o conteúdo do modal */
+#modal-content {
+    animation: fadeInModal 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
